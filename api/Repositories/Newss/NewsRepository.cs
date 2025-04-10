@@ -19,12 +19,12 @@ namespace api.Repositories.Newss
 
         public async Task<IEnumerable<News>> GetAllNewsAsync()
         {
-            return await _context.News.ToListAsync();
+            return await _context.News.Include(n => n.NewsDetails).ToListAsync();
         }
 
         public async Task<News?> GetNewsByIdAsync(int id)
         {
-            return await _context.News.FirstOrDefaultAsync(n => n.Id == id);
+            return await _context.News.Include(n => n.NewsDetails).FirstOrDefaultAsync(n => n.Id == id);
         }
 
         public async Task<News> CreateNewsAsync(News news)

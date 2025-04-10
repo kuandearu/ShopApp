@@ -11,6 +11,5 @@ namespace api.DTOs.Order
         public OrderStatus Status { get; set; } = OrderStatus.Confirmed;
         public string? Note { get; set; }
 
-        public int Total { get; set; }
     }
 }

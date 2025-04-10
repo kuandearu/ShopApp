@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\shoopdownload\\Shopapp\\api\\api.csproj": {}
+    "D:\\Project\\Shopapp_VSC_Serious\\api\\api.csproj": {}
   },
   "projects": {
-    "D:\\Project\\shoopdownload\\Shopapp\\api\\api.csproj": {
+    "D:\\Project\\Shopapp_VSC_Serious\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\shoopdownload\\Shopapp\\api\\api.csproj",
+        "projectUniqueName": "D:\\Project\\Shopapp_VSC_Serious\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "D:\\Project\\shoopdownload\\Shopapp\\api\\api.csproj",
+        "projectPath": "D:\\Project\\Shopapp_VSC_Serious\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\shoopdownload\\Shopapp\\api\\obj\\",
+        "outputPath": "D:\\Project\\Shopapp_VSC_Serious\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

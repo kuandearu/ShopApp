@@ -18,12 +18,20 @@ namespace api.Repositories.Products
 
         public async Task<IEnumerable<Product>> GetAllProductsAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(p => p.OrderDetails)
+                                            .Include(p => p.Feedbacks)
+                                            .Include(p => p.NewsDetails)
+                                            .Include(p => p.BannerDetails)
+                                            .ToListAsync();
         }
 
         public async Task<Product?> GetProductByIdAsync(int id)
         {
-            return await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Products.Include(p => p.OrderDetails)
+                                            .Include(p => p.Feedbacks)
+                                            .Include(p => p.NewsDetails)
+                                            .Include(p => p.BannerDetails)
+                                            .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<Product> CreateProductAsync(Product product)

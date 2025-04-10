@@ -25,12 +25,12 @@ namespace api.Repositories.Orders
 
         public async Task<Order?> DeleteOrderAsync(int id)
         {
-            var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
+            var order = await _context.Orders.Include(o => o.OrderDetails).FirstOrDefaultAsync(o => o.Id == id);
             if (order == null)
             {
                 return null;
             }
-
+            _context.OrderDetails.RemoveRange(order.OrderDetails);
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
             return order;

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs.OrderDetail;
 using api.Enums;
 
 namespace api.DTOs.Order
@@ -14,9 +15,9 @@ namespace api.DTOs.Order
 
         public string? Note { get; set; }
 
-        public int Total { get; set; }
+        public decimal Total => OrderDetails?.Sum(od => od.Price * od.Quantity) ?? 0;
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        // public ICollection<OrderDetail>? OrderDetails { get; set; } = new List<OrderDetail>();
+        public ICollection<OrderDetailDTO>? OrderDetails { get; set; } = new List<OrderDetailDTO>();
     }
 }

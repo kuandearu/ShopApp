@@ -14,16 +14,13 @@ namespace api.Models
         [ForeignKey(nameof(User))]
         public int UserId { get; set; }
         public User User { get; set; }
-
-        [Range(1, int.MaxValue, ErrorMessage = "Status must be a valid positive integer.")]
         public OrderStatus Status { get; set; }
 
         [DataType(DataType.MultilineText)]
         [StringLength(1000, ErrorMessage = "Note cannot exceed 1000 characters.")]
         public string? Note { get; set; }
 
-        [Range(0, int.MaxValue, ErrorMessage = "Total must be a positive number.")]
-        public int Total { get; set; }
+        public decimal Total { get; set; }
 
         [DataType(DataType.DateTime)]
         public DateTime? CreatedAt { get; set; }

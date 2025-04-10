@@ -16,11 +16,13 @@ namespace api.Mappers
                 Email = user.Email,
                 PasswordHash = user.PasswordHash,
                 Name = user.Name,
-                Role = UserRole.Admin,
+                Role = user.Role,
                 Avatar = user.Avatar,
                 Phone = user.Phone,
                 CreatedAt = user.CreatedAt,
-                UpdatedAt = user.UpdatedAt
+                UpdatedAt = user.UpdatedAt,
+                Orders = user.Orders?.Select(o => o.ToOrderDTO()).ToList(),
+                Feedbacks = user.Feedbacks?.Select(f => f.ToFeedbackDTO()).ToList(),
             };
         }
 

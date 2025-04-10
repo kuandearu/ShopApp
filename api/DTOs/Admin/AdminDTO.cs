@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs.Feedback;
+using api.DTOs.Order;
 using api.Enums;
 
 namespace api.DTOs.Admin
@@ -39,5 +41,7 @@ namespace api.DTOs.Admin
 
         [DataType(DataType.DateTime)]
         public DateTime? UpdatedAt { get; set; }
+        public ICollection<OrderDTO>? Orders { get; set; } = new List<OrderDTO>();
+        public ICollection<FeedbackDTO>? Feedbacks { get; set; } = new List<FeedbackDTO>();
     }
 }

@@ -16,7 +16,8 @@ namespace api.Mappers
                 Image = news.Image,
                 Content = news.Content,
                 CreatedAt = news.CreatedAt,
-                UpdatedAt = news.UpdatedAt
+                UpdatedAt = news.UpdatedAt,
+                NewsDetails = news.NewsDetails?.Select(n => n.ToNewsDetailDTO()).ToList(),
             };
         }
         public static News ToCreateNewsResponseDTO(this CreateNewsResponseDTO news){

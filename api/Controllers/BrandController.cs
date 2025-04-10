@@ -66,7 +66,7 @@ namespace api.Controllers
         }
 
         [HttpDelete]
-        [Route("delele/{id}")]
+        [Route("delete/{id}")]
         public async Task<IActionResult> DeleteBrand(int id){
             
             var deletedBrand = await _brandRepository.DeleteBrandAsync(id);

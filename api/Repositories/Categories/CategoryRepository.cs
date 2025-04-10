@@ -42,7 +42,7 @@ namespace api.Repositories.Categories
 
         public async Task<Category?> GetCategoryByIdAsync(int id)
         {
-            var category = await _context.Categories.FirstOrDefaultAsync(c => c.Id == id);
+            var category = await _context.Categories.Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id);
             if(category == null){
                 return null;
             }

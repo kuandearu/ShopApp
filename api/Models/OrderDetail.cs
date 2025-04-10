@@ -18,9 +18,7 @@ namespace api.Models
         [ForeignKey(nameof(Product))]
         public int ProductId { get; set; }
         public Product Product { get; set; }
-
-        [Range(0, int.MaxValue, ErrorMessage = "Price must be a positive number.")]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must be a positive integer.")]
         public int Quantity { get; set; }

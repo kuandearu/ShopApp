@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H8gAhEURmbc=",
+  "dgSpecHash": "IIABaAh75iI=",
   "success": true,
-  "projectFilePath": "D:\\Project\\shoopdownload\\Shopapp\\api\\api.csproj",
+  "projectFilePath": "D:\\Project\\Shopapp_VSC_Serious\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

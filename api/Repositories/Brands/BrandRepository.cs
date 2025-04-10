@@ -42,7 +42,7 @@ namespace api.Repositories.Brands
 
         public async Task<Brand?> GetBrandByIdAsync(int id)
         {
-            var brand = await _context.Brands.FirstOrDefaultAsync(b => b.Id == id);
+            var brand = await _context.Brands.Include(b => b.Products).FirstOrDefaultAsync(b => b.Id == id);
             if(brand == null){
                 return null;
             }

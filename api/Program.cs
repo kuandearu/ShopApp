@@ -9,8 +9,10 @@ using api.Repositories.Categories;
 using api.Repositories.Feedbacks;
 using api.Repositories.NewsDetails;
 using api.Repositories.Newss;
+using api.Repositories.OrderDetails;
 using api.Repositories.Orders;
 using api.Repositories.Products;
+using api.Repositories.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -41,6 +43,8 @@ builder.Services.AddScoped<INewsDetailRepository,NewsDetailRepository>();
 builder.Services.AddScoped<IBannerRepository,BannerRepository>();
 builder.Services.AddScoped<IBannerDetailRepository,BannerDetailRepository>();
 builder.Services.AddScoped<IOrderRepository,OrderRepository>();
+builder.Services.AddScoped<IOrderDetailRepository,OrderDetailRepository>();
+builder.Services.AddScoped<IUserRepository,UserRepository>();
 
 
 

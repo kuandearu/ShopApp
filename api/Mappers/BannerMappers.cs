@@ -16,7 +16,8 @@ namespace api.Mappers
                 Image = banner.Image,
                 Status = banner.Status,
                 CreatedAt = banner.CreatedAt,
-                UpdatedAt = banner.UpdatedAt
+                UpdatedAt = banner.UpdatedAt,
+                BannerDetails = banner.BannerDetails?.Select(b => b.ToBannerDetailDTO()).ToList(),
 
             };
         }

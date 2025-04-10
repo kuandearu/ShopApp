@@ -23,7 +23,11 @@ namespace api.Mappers
                 BrandId = product.BrandId,
                 CategoryId = product.CategoryId,
                 CreatedAt = product.CreatedAt,
-                UpdatedAt = product.UpdatedAt
+                UpdatedAt = product.UpdatedAt,
+                OrderDetails = product.OrderDetails?.Select(p => p.ToOrderDetailDTO()).ToList(),
+                Feedbacks = product.Feedbacks?.Select(p => p.ToFeedbackDTO()).ToList(),
+                NewsDetails = product.NewsDetails?.Select(p => p.ToNewsDetailDTO()).ToList(),
+                BannerDetails = product.BannerDetails?.Select(p => p.ToBannerDetailDTO()).ToList(),
 
             };
         }

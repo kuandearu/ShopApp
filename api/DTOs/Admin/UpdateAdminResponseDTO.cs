@@ -29,7 +29,6 @@ namespace api.DTOs.Admin
         public string? Avatar { get; set; }
 
         [Required]
-        [Phone(ErrorMessage = "Invalid phone number format.")]
         public int Phone { get; set; }
 
     }

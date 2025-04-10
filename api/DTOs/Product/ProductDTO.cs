@@ -4,6 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs.BannerDetail;
+using api.DTOs.Feedback;
+using api.DTOs.NewsDetail;
+using api.DTOs.OrderDetail;
 
 namespace api.DTOs.Product
 {
@@ -11,8 +15,8 @@ namespace api.DTOs.Product
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double Price { get; set; }
-        public double OldPrice { get; set; }
+        public decimal Price { get; set; }
+        public decimal OldPrice { get; set; }
         public string Image { get; set; }
         public string Description { get; set; }
         public string Specification { get; set; }
@@ -30,9 +34,9 @@ namespace api.DTOs.Product
 
         [DataType(DataType.DateTime)]
         public DateTime? UpdatedAt { get; set; }
-        // public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
-        // public ICollection<Feedback>? Feedbacks { get; set; } = new List<Feedback>();
-        // public ICollection<NewsDetail>? NewsDetails {get; set;} = new List<NewsDetail>();
-        // public ICollection<BannerDetail>? BannerDetails {get; set;} = new List<BannerDetail>();
+        public ICollection<OrderDetailDTO>? OrderDetails { get; set; } = new List<OrderDetailDTO>();
+        public ICollection<FeedbackDTO>? Feedbacks { get; set; } = new List<FeedbackDTO>();
+        public ICollection<NewsDetailDTO>? NewsDetails {get; set;} = new List<NewsDetailDTO>();
+        public ICollection<BannerDetailDTO>? BannerDetails {get; set;} = new List<BannerDetailDTO>();
     }
 }

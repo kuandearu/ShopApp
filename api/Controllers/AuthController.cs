@@ -9,6 +9,7 @@ using api.Data;
 using api.DTOs;
 using api.Enums;
 using api.Mappers;
+using api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -109,8 +110,12 @@ namespace api.Controllers
         [Route("all")]
         [Authorize(Roles = "RegisteredUser")]
         public async Task<IActionResult> GetAllUsers(){
-             var users = await _context.Users.ToListAsync();
-             return Ok(users);
+            var users = await _context.Users.Include(u => u.Orders)
+                                            .ThenInclude(o => o.OrderDetails)
+                                            .Include(u => u.Feedbacks) 
+                                            .ToListAsync();
+            var usersDTO = users.Select(u => u.ToUserDTO()).ToList();
+             return Ok(usersDTO);
         }
 
     }

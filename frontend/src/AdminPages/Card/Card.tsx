@@ -1,8 +1,13 @@
 import React from 'react';
 
-type Props = {};
+interface Props {
+  companyName : string,
+  ticker: string,
+  price: number,
 
-const Card = (props: Props) => {
+};
+
+const Card : React.FC<Props> = ({companyName, ticker, price}: Props) : JSX.Element => {
   return (
     <div className="max-w-md mx-auto bg-white rounded-2xl shadow-md overflow-hidden">
       <header className="p-4">
@@ -14,8 +19,8 @@ const Card = (props: Props) => {
         />
         {/* Title and Price */}
         <div className="flex justify-between items-center mt-4">
-          <h2 className="text-xl font-semibold text-gray-800">APPL</h2>
-          <h2 className="text-lg font-bold text-green-600">$110</h2>
+          <h2 className="text-xl font-semibold text-gray-800">{companyName} ({ticker})</h2>
+          <h2 className="text-lg font-bold text-green-600">${price}</h2>
         </div>
         {/* Description */}
         <div className="mt-3">

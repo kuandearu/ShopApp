@@ -38,7 +38,10 @@ namespace api.Repositories.Admins
 
         public async Task<User?> GetAdminByIdAsync(int id)
         {
-            var admin = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            var admin = await _context.Users.Include(u => u.Orders)
+                                            .ThenInclude(o => o.OrderDetails)
+                                            .Include(u => u.Feedbacks).
+                                            FirstOrDefaultAsync(u => u.Id == id);
             if(admin == null){
                 return null;
             }
@@ -47,7 +50,11 @@ namespace api.Repositories.Admins
 
         public async Task<IEnumerable<User>> GetAllAdminsAsync()
         {
-            return await _context.Users.Where(u => u.Role == UserRole.Admin).ToListAsync();
+            return await _context.Users.Include(u => u.Orders)
+                                        .ThenInclude(o => o.OrderDetails)
+                                        .Include(u => u.Feedbacks)
+                                        .Where(u => u.Role == UserRole.Admin)
+                                        .ToListAsync();
         }
 
         public async Task<User?> UpdateAdminAsync([FromBody]User updatedAdmin, int id)

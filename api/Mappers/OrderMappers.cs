@@ -16,9 +16,9 @@ namespace api.Mappers
                 UserId = order.UserId,
                 Status = order.Status,
                 Note = order.Note,
-                Total = order.Total,
                 CreatedAt = order.CreatedAt,
-                UpdatedAt = order.UpdatedAt
+                UpdatedAt = order.UpdatedAt,
+                OrderDetails = order.OrderDetails?.Select(od => od.ToOrderDetailDTO()).ToList(),
             };
         }
 
@@ -27,7 +27,7 @@ namespace api.Mappers
                 UserId = dTO.UserId,
                 Status = OrderStatus.Pending,
                 Note = dTO.Note,
-                Total = dTO.Total,
+                Total = 0,
                 CreatedAt = DateTime.UtcNow
             };
         }
@@ -36,7 +36,6 @@ namespace api.Mappers
             return new Order {
                 Status = dTO.Status,
                 Note = dTO.Note,
-                Total = dTO.Total,
                 UpdatedAt = DateTime.UtcNow
             };
         }

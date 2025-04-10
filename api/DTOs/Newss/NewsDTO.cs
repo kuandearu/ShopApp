@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.DTOs.NewsDetail;
 
 namespace api.DTOs.Newss
 {
@@ -13,6 +14,6 @@ namespace api.DTOs.Newss
         public string Content { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        // public ICollection<NewsDetail>? NewsDetails {get; set;} = new List<NewsDetail>();
+        public ICollection<NewsDetailDTO>? NewsDetails {get; set;} = new List<NewsDetailDTO>();
     }
 }

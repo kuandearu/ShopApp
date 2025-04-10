@@ -464,3 +464,4 @@ D:\Project\shoopdownload\Shopapp\api\obj\Debug\net8.0\refint\api.dll
 D:\Project\shoopdownload\Shopapp\api\obj\Debug\net8.0\api.pdb
 D:\Project\shoopdownload\Shopapp\api\obj\Debug\net8.0\api.genruntimeconfig.cache
 D:\Project\shoopdownload\Shopapp\api\obj\Debug\net8.0\ref\api.dll
+D:\Project\Shopapp_VSC_Serious\api\obj\Debug\net8.0\api.sourcelink.json

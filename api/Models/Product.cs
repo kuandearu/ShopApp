@@ -14,20 +14,20 @@ namespace api.Models
         public string Name { get; set; }
 
         [Range(0, double.MaxValue, ErrorMessage = "Price must be a positive real number.")]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
 
         [Range(0, double.MaxValue, ErrorMessage = "Old price must be a positive real number.")]
-        public double OldPrice { get; set; }
+        public decimal OldPrice { get; set; }
 
         [StringLength(500, ErrorMessage = "Image URL can't be longer than 500 characters.")]
         [DataType(DataType.ImageUrl, ErrorMessage = "Invalid image URL format.")]
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         [StringLength(1000, ErrorMessage = "Description cannot exceed 1000 characters.")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [StringLength(1000, ErrorMessage = "Specification cannot exceed 1000 characters.")]
-        public string Specification { get; set; }
+        public string? Specification { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "Buy turn must be a positive integer.")]
         public int BuyTurn { get; set; }
@@ -50,7 +50,7 @@ namespace api.Models
 
         [DataType(DataType.DateTime)]
         public DateTime? UpdatedAt { get; set; }
-        public ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+        public ICollection<OrderDetail>? OrderDetails { get; set; } = new List<OrderDetail>();
         public ICollection<Feedback>? Feedbacks { get; set; } = new List<Feedback>();
         public ICollection<NewsDetail>? NewsDetails {get; set;} = new List<NewsDetail>();
         public ICollection<BannerDetail>? BannerDetails {get; set;} = new List<BannerDetail>();
